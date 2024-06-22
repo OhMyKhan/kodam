@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khodam Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .header {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .result-box {
+            background-color: #fff;
+            color: #000;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .input-box {
+            background-color: #fff;
+            color: #000;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .input-box input, .input-box button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+        .input-box button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        .input-box button:hover {
+            background-color: #45a049;
+        }
+        .show-result {
+            opacity: 1;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+    <script>
+        const khodamNames = [
+            'Singa Barong',
+            'Naga Kuning',
+            'Macan Putih',
+            'Harimau Jawa',
+            'Jin Islam',
+            'Siluman Ular',
+            'Ratu Kidul',
+            'Kyai Kanjeng',
+            'Putri Hijau',
+            'Sunan Kalijaga',
+            'Nyai Blorong',
+            'Eyang Semar',
+            'Dewi Lanjar',
+            'Prabu Siliwangi',
+            'Kyai Ageng',
+            'Ki Juru Mertani',
+            'Dewi Sri',
+            'Eyang Jugo',
+            'Raden Mas Said',
+            'Mbah Mijan'
+        ];
+
+        const nameToKhodamMap = {};
+
+        function updateKhodam() {
+            const name = document.getElementById('nameInput').value.trim();
+            const resultBox = document.getElementById('resultBox');
+            if (name) {
+                if (!nameToKhodamMap[name]) {
+                    const randomKhodam = khodamNames[Math.floor(Math.random() * khodamNames.length)];
+                    nameToKhodamMap[name] = randomKhodam;
+                }
+                const khodam = nameToKhodamMap[name];
+                resultBox.textContent = Khodam ${name} adalah: ${khodam};
+                resultBox.classList.add('show-result');
+            } else {
+                resultBox.textContent = 'HEADER DAN RESULT ATAU HASIL';
+                resultBox.classList.remove('show-result');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">CEK KHODAM ONLINE</div>
+    <div class="container">
+        <div class="result-box" id="resultBox">HEADER DAN RESULT ATAU HASIL</div>
+        <div class="input-box">
+            <label for="nameInput">NAMA:</label>
+            <input type="text" id="nameInput" placeholder="Masukkan Nama Anda">
+            <button onclick="updateKhodam()">Cek Khodam</button>
+        </div>
+    </div>
+    <div class="footer">Website (C) Vrenzy 2024</div>
+</body>
+</html>
+
+kode cek khodam omgggf😱😱😱😱😱😱😱
